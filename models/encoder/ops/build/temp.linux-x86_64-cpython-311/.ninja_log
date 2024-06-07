@@ -1,0 +1,4 @@
+# ninja log v5
+0	5344	1685604027	/home/xhh/workspace/rvos_encoder/models/ops/build/temp.linux-x86_64-cpython-311/home/xhh/workspace/rvos_encoder/models/ops/src/cpu/ms_deform_attn_cpu.o	1eaabdd4515aceab
+1	20910	1685604042	/home/xhh/workspace/rvos_encoder/models/ops/build/temp.linux-x86_64-cpython-311/home/xhh/workspace/rvos_encoder/models/ops/src/vision.o	b8641c4a4f7766f9
+0	21063	1685604042	/home/xhh/workspace/rvos_encoder/models/ops/build/temp.linux-x86_64-cpython-311/home/xhh/workspace/rvos_encoder/models/ops/src/cuda/ms_deform_attn_cuda.o	d77fcd8ae1c377bb
