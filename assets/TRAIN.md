@@ -1,10 +1,11 @@
-# Tutorial for Training
+# Train & Eval on SUN-SEG
 
-## Pretrained Backbone Weights
+`
+CUDA_VISIBLE_DEVICES=0,1 WANDB_MODE=disabled TORCH_NUM_WORKERS=8 python main.py --config_file output/VIS/sunseg/pvt.py --trainer_mode train_attmpt
+`
 
-Train on SUN-SEG
+You can change the number of gpu, wandb mode, torch workers according to your hardware.
 
-CUDA_VISIBLE_DEVICES=0,1 WANDB_MODE=online SLURM_NNODES=1 SLURM_NODEID=0 TORCH_NUM_WORKERS=8 python main.py --config_file output/VIS/sunseg/pvt.py --trainer_mode train_attmpt
 
 
 
