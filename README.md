@@ -15,7 +15,7 @@ We will release the following contents for **LGRNet**:exclamation:
 
 - [<span style="color: green;">✔</span>] Training/Inference Codes
 
-- [<span style="color: green;">✘</span>] Model Predictions, Log files, Model Checkpoints
+- [<span style="color: green;">✘</span>] Model Predictions, Log files, Model Checkpoints (comming soon!)
 
 - [<span style="color: red;">✘</span>] Uterine Fibroid Dataset
 
