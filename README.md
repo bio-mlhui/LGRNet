@@ -1,23 +1,25 @@
-# LGRNet: Local-Global Reciprocal Network for Uterine Fibroid Segmentation in Ultrasound Videos
 
-> #### Huihui Xu, Yijun Yang<sup>&dagger;</sup>, Angelica Aviles-Rivero, Guang Yang, Jing Qin, and Lei Zhu*
->.
-> <sup>&dagger;</sup> Dataset Contribution,  * Correspondence
+## LGRNet: Local-Global Reciprocal Network for Uterine Fibroid Segmentation in Ultrasound Videos 
+Huihui Xu, Yijun Yang(Collect UFUV data), Angelica Aviles-Rivero, Guang Yang, Jing Qin, and Lei Zhu*
 
-<!-- ![data_demo](assets/images/demo.gif) -->
 
-## Highlight:
+[`Paper`](https://arxiv.org/abs/2407.05703) | [`BibTeX`](#citing) 
 
-- LGRNet is early accepted by **MICCAI'24**.
-- LGRNet achieves SOTA Video Polyp Segmentation (VPS) performance on SUN-SEG.
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/lgrnet-local-global-reciprocal-network-for/video-polyp-segmentation-on-sun-seg-easy-1)](https://paperswithcode.com/sota/video-polyp-segmentation-on-sun-seg-easy-1?p=lgrnet-local-global-reciprocal-network-for)
+	
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/lgrnet-local-global-reciprocal-network-for/video-polyp-segmentation-on-sun-seg-hard-1)](https://paperswithcode.com/sota/video-polyp-segmentation-on-sun-seg-hard-1?p=lgrnet-local-global-reciprocal-network-for)
 
-We will release the following contents for **LGRNet**:exclamation:
 
-- [<span style="color: green;">✔</span>] Training/Inference Codes
+This is the official implmentation of LGRNet (MICCAI'24 Early Accept), which incorporates local Cyclic Neighborhoold Propagation and global Hilbert Selective Scan to both efficiently and effectively aggregate the local-global temporal context. 
 
-- [<span style="color: green;">✘</span>] Model Predictions, Log files, Model Checkpoints (comming soon!)
+<div align="justify">As an example for ultrasound video, a single frame is too noisy and insufficient for accurate lesion diagnosis. In practice, doctors need to check the whole video to predict possible lesion region and filter out irrelevent surrounding issues </div>
+</br>
+<div align="center" style="padding: 0 100pt">
+<img src="assets/images/pipeline.png">
+</div>
+</br>
+<div align="justify">TURTLE is a method that enables fully unsupervised transfer from foundation models. The key idea behind our approach is to search for the labeling of a downstream dataset that maximizes the margins of linear classifiers in the space of single or multiple foundation models to uncover the underlying human labeling. Compared to zero-shot and supervised transfer, unsupervised transfer with TURTLE does not need the supervision in any form. Compared to deep clustering methods, TURTLE does not require task-specific representation learning that is expensive for modern foundation models.</div>
 
-- [<span style="color: red;">✘</span>] Uterine Fibroid Dataset
 
 ## Getting started
 
@@ -30,7 +32,7 @@ We will release the following contents for **LGRNet**:exclamation:
 # Introduction 
 
 LGRNet consists of a backbone, a spatial-temporal encoder, and a Mask2Former decoder, as illustrated in Figure. Each encoder layer is composed of a CNP layer and HilbertSS layer, which aggregates temporal context in a local-global manner.
-![pipeline](assets/images/pipeline.png)
+
 
 The CNP layer is a temporal extensioin of Neighborhood Attention. We also add local cyclic inter-frame dependency constraint for more efficient propagation.
 ![CNP](assets/images/cnp.png)
