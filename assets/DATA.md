@@ -6,10 +6,6 @@
 
 # Data Preparation
 
-## UFUV
-**TODO: The UFUV data maybe released in the future**
-
-
 ## VPS
 
 ### CVC/Kvasir/Mayo

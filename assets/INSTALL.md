@@ -47,7 +47,7 @@ cd models/encoder/ops/
 python setup.py build install --user
 
 # download resnet/pvtv2 ckpt, our model uses the same backbone with WeakPoly(phttps://github.com/weijun88/WeakPolyp)
-wget -P ./pt/pvt_v2/pvt_v2_b2.pth  https://huggingface.co/huihuixu/lgrnet_ckpts/blob/main/pvt_v2_b2.pth  
-wget -P ./pt/res2net/res2net50_v1b_26w_4s-3cf99910.pth  https://huggingface.co/huihuixu/lgrnet_ckpts/blob/main/res2net50_v1b_26w_4s-3cf99910.pth
+wget -P $PT_PATH/pvt_v2/pvt_v2_b2.pth  https://huggingface.co/huihuixu/lgrnet_ckpts/blob/main/pvt_v2_b2.pth  
+wget -P $PT_PATH/res2net/res2net50_v1b_26w_4s-3cf99910.pth  https://huggingface.co/huihuixu/lgrnet_ckpts/blob/main/res2net50_v1b_26w_4s-3cf99910.pth
 
 ```
