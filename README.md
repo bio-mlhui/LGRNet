@@ -1,6 +1,6 @@
 
 ## LGRNet: Local-Global Reciprocal Network for Uterine Fibroid Segmentation in Ultrasound Videos 
-Huihui Xu, Yijun Yang(Collect UFUV data), Angelica Aviles-Rivero, Guang Yang, Jing Qin, and Lei Zhu*
+Huihui Xu, Yijun Yang(collected UFUV data, this UFUV may be open-accessed according to other co-authors' permission), Angelica Aviles-Rivero, Guang Yang, Jing Qin, and Lei Zhu*
 
 
 [`Paper`](https://arxiv.org/abs/2407.05703) | [`BibTeX`](#citing) 
