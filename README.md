@@ -42,8 +42,7 @@ The training on SUN-SEG is conducted using 2 4090-24GB GPUs:
 CUDA_VISIBLE_DEVICES=0,1 TORCH_NUM_WORKERS=8 python main.py --config_file output/VIS/sunseg/pvt/pvt.py --trainer_mode train_attmpt
 ```
 
-4. checkpoints, logs, predictions 
-This is the list of ckpts, log-files:
+4. logs, checkpoints, predictions
 
 | Backbone| Dataset | Dice | mIou  | log | ckpt | predictions |
 | :----: | :----: | :----: | :----: | :----: | :----: |:----: |
