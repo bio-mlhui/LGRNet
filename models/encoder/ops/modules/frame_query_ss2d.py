@@ -276,7 +276,7 @@ class FrameQuery_SS2DLayer(nn.Module):
         frame_query_feats = self.ffn(frame_query_feats)
         return frame_query_feats
 
-from models.layers.decoder_layers import CrossAttentionLayer, SelfAttentionLayer, FFNLayer, FFNLayer_mlpRatio
+from models.layers.decoder_layers import CrossAttentionLayer, SelfAttentionLayer, FFNLayer
 @META_ARCH_REGISTRY.register()
 class TemporalQuery_CrossSelf(nn.Module):
     def __init__(self, configs) -> None:
@@ -400,51 +400,6 @@ class FrameQuery_SS2DLayer_v2(nn.Module):
             
         frame_query_feats = self.ffn(frame_query_feats)
         return frame_query_feats
-
-@META_ARCH_REGISTRY.register()
-class TemporalQuery_CrossSelf_v2(nn.Module):
-    def __init__(self, configs) -> None:
-        super().__init__()
-        d_model = configs['d_model']
-        attn_configs = configs['attn']
-        self.cross_layers = CrossAttentionLayer(d_model=d_model,
-                                                nhead=attn_configs['nheads'],
-                                                dropout=0.0,
-                                                normalize_before=attn_configs['normalize_before'])
-        self.self_layers = SelfAttentionLayer(d_model=d_model,
-                                                nhead=attn_configs['nheads'],
-                                                dropout=0.0,
-                                                normalize_before=attn_configs['normalize_before'])
-        self.ffn_layers = FFNLayer_mlpRatio(d_model=d_model,
-                                            mlp_ratio=attn_configs['ffn_mlp_ratio'],
-                                            dropout=0.0,
-                                            normalize_before=attn_configs['normalize_before'])
-    
-    def forward(self, 
-                temporal_query_feats, 
-                temporal_query_poses,
-                frame_query_feats, frame_query_poses,
-                video_aux_dict=None, **kwargs):
-        # nq b c; nq bt c
-        nq, batch_size, _ = temporal_query_feats.shape
-        nf = frame_query_feats.shape[1] // batch_size
-        nqf = frame_query_feats.shape[0]
-        frame_query_feats = rearrange(frame_query_feats, 'nq (b t) c -> (t nq) b c',b=batch_size, t=nf)
-        frame_query_poses = rearrange(frame_query_poses, 'nq (b t) c -> (t nq) b c',b=batch_size, t=nf)
-        temporal_query_feats = self.cross_layers(
-            tgt=temporal_query_feats, # n b c
-            memory=frame_query_feats,  # t nqf b c
-            pos=frame_query_poses, 
-            query_pos=temporal_query_poses,
-        )
-        temporal_query_feats = self.self_layers(
-            temporal_query_feats,
-            query_pos=temporal_query_poses,
-        )
-        temporal_query_feats = self.ffn_layers(
-            temporal_query_feats 
-        )
-        return temporal_query_feats
 
 
 class Hilbert_2DSelectiveScan(nn.Module):

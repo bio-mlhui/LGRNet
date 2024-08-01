@@ -6,7 +6,10 @@
 
 # Data Preparation
 
-## VPS
+## UFUV (Private): 
+please email the second author for UFUV dataset if you want, I have no absolute power for UFUV
+
+## VPS (Public)
 
 ### CVC/Kvasir/Mayo
 We follow [PNS-Net](https://github.com/GewelsJI/PNS-Net) to download the CVC/Kvasir/Mayo dataset. The download link is same as [link](https://drive.google.com/file/d/1TyaRy4c4nHFDa3o2bOl4dP5Z7wes7HV2/view?usp=sharing)

@@ -24,16 +24,25 @@ This is the official implmentation of LGRNet (MICCAI'24 Early Accept), which inc
 
 1. Installation: Please refer to [INSTALL.md](assets/INSTALL.md) for more details.
 2. Data preparation: Please refer to [DATA.md](assets/DATA.md) for more details.
+
+
 3. Training: 
+
+Change PORT_NUM for DDP and make sure the $CURRENT_TASK is 'VIS': (my framework is task-agnostic if you ever noticed 😃)
+```
+export CURRENT_TASK=VIS
+export MASTER_ADDR=127.0.0.1
+export MASTER_PORT=PORT_NUM
+```
 
 Make sure the $PT_PATH and $DATASET_PATH are correctly set during installation and preparing data.
 
 The training on SUN-SEG is conducted using 2 4090-24GB GPUs:
 ```
-CUDA_VISIBLE_DEVICES=0,1 WANDB_MODE=disabled TORCH_NUM_WORKERS=8 python main.py --config_file output/VIS/sunseg/pvt.py --trainer_mode train_attmpt
+CUDA_VISIBLE_DEVICES=0,1 TORCH_NUM_WORKERS=8 python main.py --config_file output/VIS/sunseg/pvt/pvt.py --trainer_mode train_attmpt
 ```
 
-4. Model Zoo: 
+4. checkpoints, logs, predictions 
 This is the list of ckpts, log-files:
 
 
@@ -41,7 +50,7 @@ This is the list of ckpts, log-files:
 5. Evaluate:
 Evaluating on SUN-SEG-Easy AND SUN-SEG-Hard using 1 4090-24GPU GPUS (**modify the ckpt_path to the absolute path**):
 ```
-CUDA_VISIBLE_DEVICES=0 WANDB_MODE=disabled TORCH_NUM_WORKERS=8 python main.py --config_file output/VIS/sunseg/pvt.py --trainer_mode eval --eval_path ckpt_path
+CUDA_VISIBLE_DEVICES=0 TORCH_NUM_WORKERS=8 python main.py --config_file output/VIS/sunseg/pvt/pvt.py --trainer_mode eval --eval_path /home/xuhuihui/workspace/LGRNet/output/VIS/sunseg/pvt/epc[0_00]_iter[0]_sap[0]/ckpt.pth.tar 
 ```
 
 ## citing

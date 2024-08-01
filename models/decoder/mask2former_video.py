@@ -14,7 +14,6 @@ from models.layers.matching import batch_dice_loss, batch_sigmoid_ce_loss, batch
 from detectron2.modeling import META_ARCH_REGISTRY
 import detectron2.utils.comm as comm
 import data_schedule.utils.box_ops as box_ops
-from data_schedule.utils.segmentation import small_object_weighting
 from models.layers.utils import zero_module
 from utils.misc import is_dist_avail_and_initialized
 from collections import defaultdict
@@ -377,7 +376,7 @@ class Video_MaskedAttn_MultiscaleMaskDecoder_v3(nn.Module):
                 multiscales, # b c t h w
                 video_aux_dict=None
                 ):
-        multiscales = self.inputs_projs(multiscales)
+        multiscales = self.inputs_projs(multiscales[0])
         # thw b c; b c t h w
         memories, memories_poses, mask_features, size_list = self.get_memories_and_mask_features(multiscales)
         memories = [mem_feat + self.level_embeds.weight[i][None, None, :] for i, mem_feat in enumerate(memories)]

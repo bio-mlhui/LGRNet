@@ -6,5 +6,5 @@
 # Modified from https://github.com/chengdazhi/Deformable-Convolution-V2-PyTorch/tree/pytorch_1.0.0
 # ------------------------------------------------------------------------------------------------
 
-from . import ms_deform_attn
+from .ms_deform_attn import MSDeformAttn
 from . import frame_query_ss2d
