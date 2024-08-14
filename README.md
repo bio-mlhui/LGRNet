@@ -32,7 +32,7 @@ This is the official implmentation of LGRNet (MICCAI'24 Early Accept), which inc
 
 3. Training: 
 
-Change PORT_NUM for DDP and make sure the $CURRENT_TASK is 'VIS': (my framework is task-agnostic if you ever noticed 😃)
+Change PORT_NUM for DDP and make sure the $CURRENT_TASK is 'VIS':
 ```
 export CURRENT_TASK=VIS
 export MASTER_ADDR=127.0.0.1
