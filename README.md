@@ -46,11 +46,11 @@ CUDA_VISIBLE_DEVICES=0,1 TORCH_NUM_WORKERS=8 python main.py --config_file output
 
 | Backbone| Dataset | Dice | mIou  | log | ckpt | predictions |
 | :----: | :----: | :----: | :----: | :----: | :----: |:----: |
-| PVTv2-B2 | SUN-SEG-Train | -- | -- | [log](https://drive.google.com/file/d/17MTOYW73RLbvZS3BLFBZEphY_0JzN6er/view?usp=drive_link) |
-| PVTv2-B2 | SUN-SEG-Hard-Testing | 0.876 | 0.805 | [log](https://drive.google.com/file/d/1wdVMWMknSlURaBROWbMax4iS9V1Tbn9-/view?usp=drive_link) |
-| PVTv2-B2 | SUN-SEG-Easy-Testing | 0.875 | 0.810 | [log](https://drive.google.com/file/d/1wdVMWMknSlURaBROWbMax4iS9V1Tbn9-/view?usp=drive_link) |
-| Res2Net-50 | SUN-SEG-Hard-Testing | 0.841 | 0.765 | [log](https://drive.google.com/file/d/17pUxFMuHpPD_In5RVrJUsPFZGOgNFzb6/view?usp=drive_link) |
-| Res2Net-50 | SUN-SEG-Easy-Testing | 0.843 | 0.774 | [log](https://drive.google.com/file/d/17pUxFMuHpPD_In5RVrJUsPFZGOgNFzb6/view?usp=drive_link) |
+| PVTv2-B2 | SUN-SEG-Train | -- | -- | [log](https://drive.google.com/file/d/17MTOYW73RLbvZS3BLFBZEphY_0JzN6er/view?usp=sharing) |
+| PVTv2-B2 | SUN-SEG-Hard-Testing | 0.876 | 0.805 | [log](https://drive.google.com/file/d/1wdVMWMknSlURaBROWbMax4iS9V1Tbn9-/view?usp=sharing) |
+| PVTv2-B2 | SUN-SEG-Easy-Testing | 0.875 | 0.810 | [log](https://drive.google.com/file/d/1wdVMWMknSlURaBROWbMax4iS9V1Tbn9-/view?usp=sharing) |
+| Res2Net-50 | SUN-SEG-Hard-Testing | 0.841 | 0.765 | [log](https://drive.google.com/file/d/17pUxFMuHpPD_In5RVrJUsPFZGOgNFzb6/view?usp=sharing) |
+| Res2Net-50 | SUN-SEG-Easy-Testing | 0.843 | 0.774 | [log](https://drive.google.com/file/d/17pUxFMuHpPD_In5RVrJUsPFZGOgNFzb6/view?usp=sharing) |
 | PVTv2-B2 | CVC612V | 0.933 | 0.877 | [log](https://drive.google.com/file/d/1m36mJL0Fu3T9F73TqFGnFsWaCGh3JDeJ/view?usp=drive_link) |
 | PVTv2-B2 | CVC300TV | 0.916 | 0.852 | [log](https://drive.google.com/file/d/1m36mJL0Fu3T9F73TqFGnFsWaCGh3JDeJ/view?usp=drive_link) |
 | PVTv2-B2 | CVC612T | 0.875 | 0.814 | [log](https://drive.google.com/file/d/1m36mJL0Fu3T9F73TqFGnFsWaCGh3JDeJ/view?usp=drive_link) |

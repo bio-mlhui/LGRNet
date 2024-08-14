@@ -12,8 +12,6 @@ stdout_visualize.txt
 hostfile
 **/olds/**
 **/old/**
-output/**
-!output/**/**/**.py
 *.pt
 *.txt
 miccai_generate_Dir

@@ -45,7 +45,7 @@ class Trainer:
         self.num_samples = 0
         assert self.train_samplers[0].start_idx == self.num_samples
         if comm.get_world_size() > 1:
-            self.model = DDP(self.model, device_ids=[comm.get_local_rank()], find_unused_parameters=True, broadcast_buffers = False)
+            self.model = DDP(self.model, device_ids=[comm.get_local_rank()], find_unused_parameters=False, broadcast_buffers = False)
     
         random.seed(seed + comm.get_rank())
         np.random.seed(seed + comm.get_rank())
