@@ -64,7 +64,7 @@ CUDA_VISIBLE_DEVICES=0,1 TORCH_NUM_WORKERS=8 python main.py --config_file output
 5. Evaluate:
 Evaluating on SUN-SEG-Easy AND SUN-SEG-Hard using 1 4090-24GPU GPUS (**modify the ckpt_path to the absolute path**):
 ```
-CUDA_VISIBLE_DEVICES=0 TORCH_NUM_WORKERS=8 python main.py --config_file output/VIS/sunseg/pvt/pvt.py --trainer_mode eval --eval_path /home/xuhuihui/workspace/LGRNet/output/VIS/sunseg/pvt/epc[0_00]_iter[0]_sap[0]/ckpt.pth.tar 
+CUDA_VISIBLE_DEVICES=0 TORCH_NUM_WORKERS=8 python main.py --config_file output/VIS/sunseg/pvt/pvt.py --trainer_mode eval --eval_path ckpt_path
 ```
 
 ## citing
